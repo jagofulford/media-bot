@@ -18,7 +18,7 @@ namespace media_bot.Models
         readonly string id;
         readonly Source source;
 
-        MediaObject(string title, int year, string poster, string overview, string id, Source source)
+        public MediaObject(string title, int year, string poster, string overview, string id, Source source)
         {
             this.title = title;
             this.year = year;
