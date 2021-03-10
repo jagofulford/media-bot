@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using media_bot.Workers;
 
 namespace media_bot
 {
@@ -18,7 +19,7 @@ namespace media_bot
             Host.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {
-                    services.AddHostedService<Worker>();
+                    services.AddHostedService<SonarrWorker>();
                 });
     }
 }

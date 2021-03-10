@@ -11,27 +11,28 @@ namespace media_bot.Models
     }
     class MediaObject
     {
-        readonly string title;
-        readonly int year;
-        readonly string poster;
-        readonly string overview;
-        readonly string id;
-        readonly Source source;
+        readonly string _title;
+        readonly int _year;
+        readonly string _poster;
+        readonly string _overview;
+        readonly string _id;
+        readonly Source _source;
 
         public MediaObject(string title, int year, string poster, string overview, string id, Source source)
         {
-            this.title = title;
-            this.year = year;
-            this.poster = poster;
-            this.overview = overview;
-            this.id = id;
-            this.source = source;
+            _year = year;
+            _poster = poster;
+            _title = title;
+            _overview = overview;
+            _id = id;
+            _source = source;
         }
 
         public string GetMediaDisplayTitle()
         {
-            var year = (this.year == 0) ? "unk" : this.year.ToString();
-            return this.title + " (" + year + ") " + this.overview.Substring(0,100);
+            var year = (_year == 0) ? "unk" : _year.ToString();
+            var mediaTitle = _title + " (" + year + ") " + _overview.Substring(0, Math.Min(100,_overview.Length));
+            return mediaTitle;
         }
     }
 }
