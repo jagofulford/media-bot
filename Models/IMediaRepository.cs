@@ -6,7 +6,7 @@ namespace media_bot.Models
 {
     interface IMediaRepository
     {
-        IDictionary<int,MediaObject> SearchMedia(string searchTerm);
+        IDictionary<string,MediaObject> SearchMedia(string searchTerm);
         bool AddMedia(string uniqueId);
     }
 }
