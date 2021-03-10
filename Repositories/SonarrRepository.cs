@@ -12,10 +12,13 @@ namespace media_bot.Repositories
             throw new NotImplementedException();
         }
 
-        public IEnumerable<MediaObject> SearchMedia(string searchTerm)
+        public IDictionary<int,MediaObject> SearchMedia(string searchTerm)
         {
             var media = new MediaObject("movie title", 2020, "poster", "", "", Source.sonarr);
-            var mediaLibrary = new List<MediaObject>() { media };
+            var mediaLibrary = new Dictionary<int, MediaObject>
+            {
+                { 1, media }
+            };
             return mediaLibrary;
         }
     }
